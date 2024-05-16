@@ -66,6 +66,9 @@ def move_right():
                         score += matix[i][j]
                         matix[i][k] = 0
                         break
+                    elif matix[i][k] != matix[i][j]:
+                        break
+
     add_random_num()
 
 def move_left():
@@ -82,6 +85,9 @@ def move_left():
                         score += matix[i][j]
                         matix[i][k] = 0
                         break
+                    elif matix[i][k] != matix[i][j]:
+                        break
+                        
     add_random_num()
 
 def move_up():
@@ -98,6 +104,9 @@ def move_up():
                         score += matix[j][i]
                         matix[k][i] = 0
                         break
+                    elif matix[i][k] != matix[i][j]:
+                        break
+                        
     add_random_num()
 
 def move_down():
@@ -114,6 +123,9 @@ def move_down():
                         score += matix[j][i]
                         matix[k][i] = 0
                         break
+                    elif matix[i][k] != matix[i][j]:
+                        break
+
     add_random_num()
 
 def main():
@@ -150,3 +162,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
