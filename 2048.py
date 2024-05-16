@@ -62,42 +62,42 @@ def move_right():
                        matix[i][j] = matix[i][k]
                        matix[i][k] = 0
                     elif matix[i][j] == matix[i][k]:
-                         matix[i][j] *= 2
-                         score += matix[i][j]
-                         matix[i][k] = 0
-                    break
+                        matix[i][j] *= 2
+                        score += matix[i][j]
+                        matix[i][k] = 0
+                        break
     add_random_num()
 
 def move_left():
     global score
     for i in range(4):
-        for j in range(3, 0, -1):
+        for j in range(3):
             for k in range(j + 1, 4):
                 if matix[i][k] > 0:
                     if matix[i][j] == 0:
                        matix[i][j] = matix[i][k]
                        matix[i][k] = 0
                     elif matix[i][j] == matix[i][k]:
-                         matix[i][j] *= 2
-                         score += matix[i][j]
-                         matix[i][k] = 0
-                    break
+                        matix[i][j] *= 2
+                        score += matix[i][j]
+                        matix[i][k] = 0
+                        break
     add_random_num()
 
 def move_up():
     global score
     for i in range(4):
-        for j in range(3, 0, -1):
+        for j in range(3):
             for k in range(j + 1, 4):
                 if matix[k][i] > 0:
                     if matix[j][i] == 0:
                        matix[j][i] = matix[k][i]
                        matix[k][i] = 0
                     elif matix[j][i] == matix[k][i]:
-                         matix[j][i] *= 2
-                         score += matix[j][i]
-                         matix[k][i] = 0
-                    break
+                        matix[j][i] *= 2
+                        score += matix[j][i]
+                        matix[k][i] = 0
+                        break
     add_random_num()
 
 def move_down():
@@ -110,10 +110,10 @@ def move_down():
                        matix[j][i] = matix[k][i]
                        matix[k][i] = 0
                     elif matix[j][i] == matix[k][i]:
-                         matix[j][i] *= 2
-                         score += matix[j][i]
-                         matix[k][i] = 0
-                    break
+                        matix[j][i] *= 2
+                        score += matix[j][i]
+                        matix[k][i] = 0
+                        break
     add_random_num()
 
 def main():
@@ -124,7 +124,7 @@ def main():
         print("\t\tYou Score: %s" %(score))
         d = input("(w:↑) (s:↓) (a:←) (d:→) (q:quit) :")
         if d == 'a':
-            move_left
+            move_left()
             if not check():
                 print("GG")
                 flag = False
