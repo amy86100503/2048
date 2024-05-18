@@ -35,8 +35,14 @@ def init():
               break
     display()
 
+def check2():
+    for i in range(4):
+        for j in range(4):
+            if matix[i][j] == 0:
+                return True
+
 def add_random_num():
-    while 1:
+    while check2():
         k = 2 if random.randrange(0, 10) > 1 else 4
         s = divmod(random.randrange(0, 16), 4)
         if matix[s[0]][s[1]] == 0:
@@ -46,11 +52,16 @@ def add_random_num():
 
 def check():
     for i in range(4):
-        for j in range(3):
-            if matix[i][j] == 0 or matix[i][j] == matix[i][j + 1] or matix[j][i] == matix[j + 1][i]:
+        for j in range(4):
+            if matix[i][j] == 0:
                 return True
+            elif j != 3:
+                if matix[i][j] == matix[i][j + 1] or matix[j][i] == matix[j + 1][i]:
+                    return True
     else:
         return False
+
+
 
 def move_right():
     global score
@@ -138,22 +149,26 @@ def main():
         if d == 'a':
             move_left()
             if not check():
-                print("GG")
+                print("\t\tYou Score: %s" %(score))
+                print("\t\t   Game Over")
                 flag = False
         elif d == 's':
             move_down()
             if not check():
-                print("GG")
+                print("\t\tYou Score: %s" %(score))
+                print("\t\t   Game Over")
                 flag = False
         elif d == 'w':
             move_up()
             if not check():
-                print("GG")
+                print("\t\tYou Score: %s" %(score))
+                print("\t\t   Game Over")
                 flag = False
         elif d == 'd':
             move_right()
             if not check():
-                print("GG")
+                print("\t\tYou Score: %s" %(score))
+                print("\t\t   Game Over")
                 flag = False
         elif d == 'q':
             break
